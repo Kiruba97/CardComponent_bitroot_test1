@@ -1,0 +1,166 @@
+
+
+/* font*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+.card-container{
+  width: 300px;
+  overflow:hidden;
+  box-shadow: 0px 0px 15px -5px;
+  transition: 0.3s;
+  animation: ease-in-out;
+  
+  display: grid;
+  grid-auto-rows: auto;
+  gap: 30px;
+  margin: 50px auto 0;
+  
+ 
+  perspective: 700px;
+  align-items: center;
+
+  padding: 0.1rem;
+  font-family:"lato"
+}
+
+.card-container:hover {
+transform: scale(1.1);
+ box-shadow: 0px 0px 15px 0px;
+ filter: grayscale(100%) ;
+}
+
+.card-container:hover button{
+  filter: none;
+  visibility: visible;
+  cursor: pointer;
+}
+
+
+.image-container{
+  overflow: hidden;
+  height:200px;
+  display: flex;
+}
+
+.image-container:hover {
+  -webkit-filter: grayscale(100%) blur(3px);
+	filter: grayscale(100%);
+  
+}
+
+
+.card-content{
+  margin: 1rem;
+  margin-top : 0.5rem;
+}
+
+h3,p{
+  margin: 0;
+  padding: 0;
+}
+
+button{
+  position:absolute;
+  top: 23%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  color: rgb(179, 15, 15, 69, 69);
+  visibility: hidden;
+  padding:10px;
+}
+.card-title{
+  margin-bottom: 0.5rem;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+.column{
+  float:left;
+  display:50%;
+}
+.card-footer{
+  position : relative;
+  margin-top : 2.0rem;
+}
+
+.time{
+  
+    float: right;
+    position: absolute;
+    right:0;
+    bottom:-0.1rem;
+    padding: 1.5px;
+}
+
+/*responsive design */
+
+@media screen and (max-width: 1000px){
+  .card-container{
+    width:100%;
+    display:flex;
+  }
+}
+
+.popup{
+
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 1600px;
+  height: 90vh;
+  max-height: 800px;
+  border-radius: 20px;
+  background:rgba(0, 0, 0, 0.75);
+  display: flex;
+  overflow: hidden;
+  align-items:center;
+  z-index: 5;
+  transition: 1s;
+
+}
+
+.modal{
+  width:100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left:0;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background-color: #000000;
+  transition: opacity .4s ease, visibility .4s ease, transform .5s ease-in-out;
+  opacity: 0;
+  visibility:hidden;
+  transform: scale(0);
+  overflow:hidden;
+  z-index: 999;
+}
+
+.modal.open {
+  visibility: visible;
+  opacity:1;
+  transform:scale(1);
+  
+}
+
+.modal img{
+  width: auto;
+  max-width:45%;
+  max-height:45%;
+  height: auto;
+  display:block;
+  line-height:0;
+  box-sizing: border-box;
+  padding: 20px 0 20px;
+  margin: 0 auto;
+}
